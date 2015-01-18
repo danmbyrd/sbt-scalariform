@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.typesafe.sbt
+package com.danieltrinh.sbt
 
 import sbt._
 import sbt.Keys._

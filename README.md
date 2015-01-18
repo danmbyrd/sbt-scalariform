@@ -18,12 +18,14 @@ To add sbt-scalariform to your build using sbt 0.13, just add the below setting,
 ... // Other settings
 resolvers += "Sonatype OSS Releases" at "https://oss.sonatype.org/service/local/staging/deploy/maven2"
 
-addSbtPlugin("com.danieltrinh" % "sbt-scalariform" % "1.3.0")
+addSbtPlugin("com.danieltrinh" % "sbt-scalariform" % "1.3.1")
 ```
 
 sbt 0.12.x and below is not supported for this fork, see `https://github.com/sbt/sbt-scalariform` for
 older versions
 
+Version `1.3.1` uses a different FQN for package names than 1.3.0 and earlier -- the imports for sbt-scalariform
+are now under `com.danieltrinh.sbt` instead of `com.typesafe.sbt`, and the imports for scalariform settings are now under `com.danieltrinh.scalariform.formatter.preferences._` instead of `scalariform.formatter.preferences._`.
 
 After adding the sbt-scalariform plugin like this, you still have to configure it, i.e. add the relevant settings to your build definition. Please read on ...
 
@@ -64,7 +66,7 @@ sbt-scalariform comes with various configuration options. Changing the formattin
 You can provide your own formatting preferences for Scalariform via the setting key `ScalariformKeys.preferences` which expects an instance of `IFormattingPreferences`. Make sure you import all necessary members from the package `scalariform.formatter.preferences`. Let's look at an example:
 
 ```
-import scalariform.formatter.preferences._
+import com.danieltrinh.scalariform.formatter.preferences._
 
 scalariformSettings
 

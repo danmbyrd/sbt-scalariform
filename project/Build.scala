@@ -36,7 +36,7 @@ object SbtScalariformBuild extends Build {
       organization := "com.danieltrinh",
       profileName := "com.danieltrinh",
       name := "sbt-scalariform",
-      version in ThisBuild := "1.3.0",
+      version in ThisBuild := "1.3.1-SNAPSHOT",
       resolvers ++= Resolvers.resolvers,
       libraryDependencies ++= Dependencies.sbtScalariform,
       scalacOptions ++= List(
